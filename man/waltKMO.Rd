@@ -17,16 +17,15 @@ A list of components.
 \description{
 waltKMO is a function for calculating Kaiser-Meyer using the Kaiser & Rice (1974) algorithm.
 }
-\section{Interpretation}{
-
+\details{
 Kaiser and Rice (1974) categorized KMO values using the following subjective appraisals.
+
 \tabular{rl}{
-   in the 0.90s \tab marvelous
-   in the 0.80s \tab meritorious
-   in the 0.70s \tab middling
-   in the 0.60s \tab mediocre
-   in the 0.50s \tab miserable
+   in the 0.90s \tab marvelous\cr
+   in the 0.80s \tab meritorious\cr
+   in the 0.70s \tab middling\cr
+   in the 0.60s \tab mediocre\cr
+   in the 0.50s \tab miserable\cr
    below 0.50 \tab unacceptable
 }
 }
-
