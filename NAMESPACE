@@ -2,3 +2,4 @@
 
 export(cleanFactors)
 export(waltKMO)
+export(waltplot)
