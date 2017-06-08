@@ -4,7 +4,7 @@ Version: 0.9.0
 Authors@R: person("Karl", "Bailey", email = "karl@cognopod.com", role = c("aut", "cre"))
 Description: Lab functions often used during factor analysis.
 Depends: R (>= 3.4.0)
-Imports: e1071, scales, psych, dplyr, tidyr, riverplot, RColorBrewer, ggthemes, ggplot2, cowplot
+Imports: e1071, scales, psych, dplyr, tidyr, riverplot, RColorBrewer, ggthemes, ggplot2, cowplot, ggcorrplot
 Suggests: lavaan
 License: GNU GPLv3
 Encoding: UTF-8
