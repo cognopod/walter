@@ -6,7 +6,8 @@
 #' @return A list of components
 #'
 riverbank <- function(factorlist) {
-  palette = paste0(RColorBrewer::brewer.pal(ncol(factorlist), "Set1"), "90")
+  #palette <- paste0(RColorBrewer::brewer.pal(ncol(factorlist), "Set1"), "90")
+  palette <- paste0(viridis::plasma(ncol(factorlist), alpha = 0.5625))
   for (this.col in 2:ncol(factorlist)){
     if (this.col == 2) {
       EDGES <- as.data.frame(table(factorlist[,(this.col-1)], factorlist[,this.col]))
@@ -26,6 +27,12 @@ riverbank <- function(factorlist) {
   NODES <- na.omit(NODES)
   NODES <- NODES[order(NODES$ID),]
   NODES$col <- palette[NODES$x]
+  if (ncol(factorlist) < 3) {
+    textpalette <- c("white", "black")
+  } else {
+    textpalette <- c("white", "white", rep("black", ncol(factorlist) - 2))
+  }
+  NODES$textcol <- textpalette[NODES$x]
   #NODES$x <- as.numeric(levels(NODES$x))[NODES$x]
   return(list("NODES" = NODES, "EDGES" = EDGES))
 }
