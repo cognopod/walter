@@ -4,7 +4,7 @@
 #'
 #' @param factorlist A list of factors from \code{watershed()}
 #' @return A list of components
-#' @export
+#'
 riverbank <- function(factorlist) {
   palette = paste0(RColorBrewer::brewer.pal(ncol(factorlist), "Set1"), "90")
   for (this.col in 2:ncol(factorlist)){
