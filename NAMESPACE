@@ -3,6 +3,8 @@
 export(cleanFactors)
 export(efa)
 export(heuristics)
+export(riverbank)
 export(riverbend)
 export(waltKMO)
 export(waltplot)
+export(watershed)

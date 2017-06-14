@@ -4,7 +4,7 @@
 \alias{watershed}
 \title{watershed}
 \usage{
-watershed(data, maxlatent = NA, minlatent = NA, cutoff = 0.4)
+watershed(data, maxlatent = ncol(data), minlatent = 1, cutoff = 0.4)
 }
 \arguments{
 \item{data}{Data frame containing only variables to test.}

@@ -7,7 +7,7 @@
 #' @param minlatent Minimum number of latent variables to test.
 #' @param cutoff Cutoff value for leaving a variable out of that factor analysis.
 #' @return A data frame with maximum factor loading identified for each variable.
-
+#' @export
 watershed <- function(data, maxlatent = ncol(data), minlatent = 1, cutoff = 0.4) {
   FACTORTEST <- data.frame(matrix(rep(NA,(maxlatent-(minlatent-1)) * (ncol(data))), ncol = maxlatent-(minlatent-1), nrow = ncol(data)))
   ITEM = c(LETTERS, c(t(outer(LETTERS, LETTERS, paste, sep = ""))))[1:ncol(data)]
