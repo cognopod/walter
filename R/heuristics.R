@@ -23,13 +23,17 @@ heuristics <- function (data, items = c(1:ncol(data))) {
   sink()
   cat("Parallel Analysis: ", PARA$nfact, "\n")
   cat("Velicer's MAP: ", which.min(MAP$map), "\n")
-  CLUSTER.SIZES <- apply(ICLUST$clusters, 2, function(x) {sum(abs(x))})
-  ICLUST.BIG <- sum(sapply(CLUSTER.SIZES, function (x) {if (x > 3) 1 else 0}))
-  ICLUST.SMALL <- sum(sapply(CLUSTER.SIZES, function (x) {if (x > 3) 0 else 1}))
-  cat("Big ICLUST cluster (>3): ", ICLUST.BIG, "\n")
-  cat("Small ICLUST cluster (<=3): ", ICLUST.SMALL, "\n")
-  cat("ICLUST cluster size summary:\n")
-  table(CLUSTER.SIZES)
+  if (length(dim(ICLUST$clusters))) {
+    CLUSTER.SIZES <- apply(ICLUST$clusters, 2, function(x) {sum(abs(x))})
+    ICLUST.BIG <- sum(sapply(CLUSTER.SIZES, function (x) {if (x > 3) 1 else 0}))
+    ICLUST.SMALL <- sum(sapply(CLUSTER.SIZES, function (x) {if (x > 3) 0 else 1}))
+    cat("Big ICLUST cluster (>3): ", ICLUST.BIG, "\n")
+    cat("Small ICLUST cluster (<=3): ", ICLUST.SMALL, "\n")
+    cat("ICLUST cluster size summary:\n")
+    table(CLUSTER.SIZES)
+  } else {
+    cat("ICLUST: 1 cluster\n")
+  }
 }
 
 
