@@ -12,7 +12,7 @@ watershed <- function(data, maxlatent = ncol(data), minlatent = 1, cutoff = 0.4)
   FACTORTEST <- data.frame(matrix(rep(NA,(maxlatent-(minlatent-1)) * (ncol(data))), ncol = maxlatent-(minlatent-1), nrow = ncol(data)))
   ITEM = c(LETTERS, c(t(outer(LETTERS, LETTERS, paste, sep = ""))))[1:ncol(data)]
   FACTORTEST <- cbind(ITEM, FACTORTEST)
-  for (i in maxlatent-minlatent:0) {
+  for (i in (maxlatent-minlatent):0) {
     data.pa.oblimin <- psych::fa(data, nfactors=minlatent+i, SMC=TRUE, fm="pa", rotate="oblimin", max.iter=100)
     FACTORTEST[,i+1] <- as.vector(apply(data.pa.oblimin$Structure,1,function(x) {if(max(abs(x)) >= cutoff) paste0(LETTERS[i], which.max(abs(x))) else NA}))
   }
