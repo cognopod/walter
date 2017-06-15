@@ -3,6 +3,7 @@
 export(cleanFactors)
 export(efa)
 export(heuristics)
+export(riverbarge)
 export(riverbend)
 export(waltKMO)
 export(waltplot)

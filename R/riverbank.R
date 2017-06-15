@@ -18,7 +18,7 @@ riverbank <- function(factorlist) {
   colnames(EDGES) <- c("N1", "N2", "Value")
   for (this.col in 1:ncol(factorlist)){
     if (this.col == 1) {
-      NODES <- data.frame(ID = unique(factorlist[,this.col]), x = length(na.omit(unique(factorlist[,this.col]))))
+      NODES <- data.frame(ID = unique(factorlist[,this.col]), x = this.col)
     } else {
       NODES <- rbind(NODES, data.frame(ID = unique(factorlist[,this.col]), x = this.col))
     }
