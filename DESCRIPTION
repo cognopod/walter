@@ -1,6 +1,6 @@
 Package: walter
 Title: Functions and Visualizations for Factor Analysis
-Version: 0.9.1
+Version: 0.9.2
 Authors@R: person("Karl", "Bailey", email = "karl@cognopod.com", role = c("aut", "cre"))
 Description: Lab functions often used during factor analysis.
 Depends: R (>= 3.4.0)

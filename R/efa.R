@@ -38,14 +38,4 @@ efa <- function(data, nfactors = 2, items = c(1:ncol(data)), cutoff = 0.3){
   cat(row.names(data.pa.oblimin$loadings)[k.nom], "\n")
   cat("THIS COMMUNALITY: ")
   cat(data.pa.oblimin$communality[k.nom])
-  ggcorrplot::ggcorrplot(corr = cor(SUBEFA),
-                         type = "full",
-                         colors = (c("#b2182b", "white", "#2166ac")),
-                         outline.color = "grey",
-                         lab = TRUE,
-                         lab_col = c("white"),
-                         lab_size = 2,
-                         tl.cex=8,
-                         tl.srt = 90,
-                         hc.order = TRUE)
 }
